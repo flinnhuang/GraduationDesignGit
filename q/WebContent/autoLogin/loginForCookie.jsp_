@@ -1,0 +1,28 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="com.gree.q.util.DateTime"%>
+<%@ page import="com.gree.q.util.LdapUtil"%>
+<%@ page import="javax.servlet.*"%>
+<%
+    String action="noaction";
+    action=((String)request.getAttribute("action")).trim();
+    String href = request.getParameter("href");
+	System.out.println("loginForCookie.jsp");
+	System.out.println("href===="+href);
+    if(action != null && action.equals("1")){
+    	String uid = ((String)request.getAttribute("usid")).trim();
+		String msg = ((String)request.getAttribute("msg")).trim();
+
+		if(msg==null||!msg.equals("havelogin")){
+			out.println("<br/><br/><center>您已退出登錄！</center>"+
+			"<br/><center><a href='index.jsp' style='color:red;font-size:10px;'>返回首页</a></center>");
+			//response.getWriter().write("error");
+			return;
+		}else{
+			session.setAttribute("mail", uid+"@gree.com.cn");
+			session.setMaxInactiveInterval(900);//设置session失效时间，单位为秒，此为15分钟后失效
+			response.getWriter().write("success");
+			response.sendRedirect(href);
+		}
+  } 
+%>

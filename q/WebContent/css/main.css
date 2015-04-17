@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+.tab_iframe{width:100%;height:100%;border:0;}
+.home_menu {
+	width: 100%;
+	float: left;
+	padding-left: 0px;
+	padding-top: 0px;
+}
+.home_banner {
+}
+.home_banner span{
+	font-size: 14px;
+	color:navy;
+}
+
+#logo{
+	margin-left:85%;
+	margin-right:auto;
+}
+
+div table tr{
+	top: 25%; 
+    left: 25%;
+}
+
+.pclose{
+	margin-top: -15px;
+	margin-right: -17px;
+}
+
+.redfont{
+	font-size: 13px;
+	color: red;
+	list-style: none;
+}
+.redfont a{
+	font-size: 15px;
+	color: #066EAC;
+}
+
+/*显示未处理问题div，初始隐藏*/
+.qDispose{
+	display: none;
+    position: absolute; 
+    top: 25%; 
+    left: 25%; 
+    width: 45%; 
+    height: 45%; 
+    padding: 20px; 
+    border: 10px solid #850001; 
+	background-color: white; 
+	z-index:1000; 
+	overflow: hide; 
+}

@@ -1,0 +1,165 @@
+<HTML>
+<BODY>
+</BODY>
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="onfocus" ONEVENT="do_onfocus()"/>
+<PUBLIC:ATTACH EVENT="onblur" ONEVENT="do_onblur()"/>
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="do_onmouseover()"/>
+<PUBLIC:ATTACH EVENT="onmouseout" ONEVENT="do_onmouseout()"/>
+</PULCI:COMPONENT>
+
+<SCRIPT><!--
+
+var timer=25;//每次变化的时间
+var times=17;//单向变化次数
+var iid=0;
+
+var c1=GetColorHexCode(element.currentStyle.backgroundColor);
+var c2=GetColorHexCode("#ffffff");
+
+var c3=GetColorHexCode(element.currentStyle.color);
+var c4=GetColorHexCode("mediumblue");
+
+var arr=null;
+var arr2=null;
+var index=0;
+
+var shadein=false;
+var shadeout=false;
+
+var mout=true;
+
+try{
+	if(window.document.activeElement==element)do_onfocus();
+}catch(x){}
+
+function GetColorHexCode(color)
+{
+	try
+	{
+		var e=document.body;
+		e.bgColor=color;
+		var res=e.bgColor;
+		return res;
+	}
+	catch(x){return "#000000"}
+}
+function To2Hex(num)
+{
+	var r=num.toString(16);
+	if(num<16)r="0"+r;
+	return r;
+}
+
+function ResetInterval()
+{
+	if(iid==0)iid=setInterval(Next,timer);
+}
+function ClearInterval()
+{
+	if(iid!=0)clearInterval(iid);
+	iid=0;
+}
+function Next()
+{
+	EnsureArray();
+	if(shadein==true||shadeout==false)
+	{
+		index++;
+		if(index>=arr.length)
+		{
+			index=arr.length-1;
+			if(shadein)
+			{
+				ClearInterval();
+				shadeout=true;
+				return;
+			}
+			else//shadein==false,shadeout==false
+			{
+				shadeout=true;
+				return;
+			}
+		}
+		element.runtimeStyle.backgroundColor=arr[index];
+		element.runtimeStyle.color=arr2[index];
+	}
+	else
+	{
+		index--;
+		if(index<0)
+		{
+			index=0;
+			ClearInterval();
+			return;
+		}
+		element.runtimeStyle.backgroundColor=arr[index];
+		element.runtimeStyle.color=arr2[index];
+	}
+}
+function EnsureArray()
+{
+	if(arr!=null)return 1;
+	arr=new Array();
+	arr2=new Array();
+	var r1=parseInt(c1.substr(1,2),16);
+	var g1=parseInt(c1.substr(3,2),16);
+	var b1=parseInt(c1.substr(5,2),16);
+	var r2=parseInt(c2.substr(1,2),16);
+	var g2=parseInt(c2.substr(3,2),16);
+	var b2=parseInt(c2.substr(5,2),16);
+	
+	var r3=parseInt(c3.substr(1,2),16);
+	var g3=parseInt(c3.substr(3,2),16);
+	var b3=parseInt(c3.substr(5,2),16);
+	var r4=parseInt(c4.substr(1,2),16);
+	var g4=parseInt(c4.substr(3,2),16);
+	var b4=parseInt(c4.substr(5,2),16);
+	for(var i=0;i<=times;i++)
+	{
+		var r=parseInt(i*(r2-r1)/times+r1);
+		var g=parseInt(i*(g2-g1)/times+g1);
+		var b=parseInt(i*(b2-b1)/times+b1);
+		arr[arr.length]="#"+To2Hex(r)+To2Hex(g)+To2Hex(b);
+	}
+	for(var i=0;i<=times;i++)
+	{
+		var r=parseInt(i*(r4-r3)/times+r3);
+		var g=parseInt(i*(g4-g3)/times+g3);
+		var b=parseInt(i*(b4-b3)/times+b3);
+		arr2[arr2.length]="#"+To2Hex(r)+To2Hex(g)+To2Hex(b);
+	}
+	return 2;
+}
+function do_onfocus()
+{
+	shadein=true;
+	shadeout=false;
+	ResetInterval();
+}
+function do_onblur()
+{
+	if(mout)shadein=false;
+	ResetInterval();
+}
+function do_onmouseover()
+{
+	if(element.contains(event.fromElement))return;
+	mout=false;
+	shadein=true;
+	shadeout=false;
+	ResetInterval();
+	Next();
+}
+function do_onmouseout()
+{
+	mout=true;
+	EnsureArray();
+	if(window.document.activeElement!=element)
+		shadein=false;
+	if(element.contains(event.toElement))return;
+	ResetInterval();
+}
+
+--></SCRIPT>
+</HTML>

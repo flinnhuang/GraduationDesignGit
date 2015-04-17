@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+	<display-name>q</display-name>
+	
+	<!-- 
+	<filter>
+		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<filter-class>
+			com.gree.pro.util.SetCharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetCharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>InvaidLoginFilter</filter-name>
+		<filter-class>com.gree.pro.util.InvaidLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>InvaidLoginFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>InvaidLoginFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>InvaidLoginFilter</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+	 -->
+	<listener>
+		<listener-class>com.gree.q.util.MyListener</listener-class>
+	</listener>
+
+	<session-config>
+		<session-timeout>360</session-timeout>
+	</session-config>
+</web-app>

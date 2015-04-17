@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>日历</title>
+<script language="javascript" src="dateview.js"></script>
+<script language="javascript">
+<!--
+//document.writeln('<span id=tmpSelectYearLayer  style="z-index: 9999;position: absolute;top: 2; left: 18;display: none"></span>');
+//document.writeln('<span id=tmpSelectMonthLayer style="z-index: 9999;position: absolute;top: 2; left: 75;display: none"></span>');
+document.writeln('<table border=0 cellspacing=1 cellpadding=0 width=142 height=160 bgcolor=#808080 onselectstart="return false">');
+document.writeln('  <tr>');
+document.writeln('     <td width=142 height=23 bgcolor=#FFFFFF>');
+document.writeln('        <table border=0 cellspacing=1 cellpadding=0 width=140 height=23>');
+document.writeln('          <tr align=center>');
+document.writeln('            <td width=20 align=center bgcolor=#808080 style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzPrevM()" title="向前翻　月">');
+document.writeln('              <b>&lt;&lt;</b>');
+document.writeln('            </td>');
+document.writeln('            <td width=100 align=center style="font-size:12px;cursor:default" >');
+document.writeln('              <span id=meizzYearHead></span>&nbsp;年&nbsp;<span id=meizzMonthHead></span>&nbsp;月');
+document.writeln('            </td>');
+document.writeln('            <td width=20 bgcolor=#808080 align=center style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzNextM()" title="往后翻　月">');
+document.writeln('              <b>&gt;&gt;</b>');
+document.writeln('            </td>');
+document.writeln('          </tr>');
+document.writeln('        </table>');
+document.writeln('     </td>');
+document.writeln('  </tr>');
+document.writeln('  <tr>');
+document.writeln('    <td width=142 height=18 bgcolor=#808080>');
+document.writeln('      <table border=0 cellspacing=0 cellpadding=0 width=140 height=1 style="cursor:default">');
+document.writeln('        <tr align=center>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">日</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">一</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">二</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">三</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">四</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">五</td>');
+document.writeln('          <td style="font-size:12px;color:#FFFFFF">六</td>');
+document.writeln('        </tr>');
+document.writeln('      </table>');
+document.writeln('    </td>');
+document.writeln('  </tr>');
+document.writeln('  <tr>');
+document.writeln('    <td width=142 height=120>');
+document.writeln('      <table border=0 cellspacing=1 cellpadding=0 width=140 height=120 bgcolor=#FFFFFF>');
+
+var dgn=0;
+for (j=0;j<5;j++){ 
+document.writeln('        <tr align=center>'); 
+for (i=0;i<7;i++){
+document.writeln('          <td width=20 height=20 id=meizzDay'+dgn+' style="font-size:12px" onclick=dgmeizzDayClick(this.innerText)>');
+document.writeln('          </td>');
+dgn++;
+}
+document.writeln('        </tr>');
+}
+
+document.writeln('        <tr align=center>');
+document.writeln('          <td width=20 height=20 style="font-size:12px" id=meizzDay35 onclick=dgmeizzDayClick(this.innerText)>');
+document.writeln('          </td>');
+document.writeln('          <td width=20 height=20 style="font-size:12px" id=meizzDay36 onclick=dgmeizzDayClick(this.innerText)>');
+document.writeln('          </td>');
+document.writeln('          <td colspan=5 align=right>');
+document.writeln('            <span onclick=dgcloseView() style="font-size:12px;cursor: hand" ><u>关闭本控件</u></span>&nbsp;');
+document.writeln('          </td>');
+document.writeln('        </tr>');
+document.writeln('      </table>');
+document.writeln('    </td>');
+document.writeln('  </tr>');
+document.writeln('  <tr>');
+document.writeln('    <td>');
+document.writeln('      <table border=0 cellspacing=1 cellpadding=0 width=100% bgcolor=#FFFFFF>');
+document.writeln('        <tr height="20">');
+document.writeln('          <td width=20 align=center bgcolor=#808080 style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzPrevY()" title="向前翻　年">');
+document.writeln('            <b>|&lt;</b>');
+document.writeln('          </td>');
+document.writeln('          <td width=20 align=center bgcolor=#808080 style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzPrevM()" title="向前翻　月">');
+document.writeln('            <b>&lt;&lt;</b>');
+document.writeln('          </td>');
+document.writeln('          <td width=60 align=center bgcolor=#808080 style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzToday()" title="现在的年月">');
+document.writeln('            <b>TODAY</b>');
+document.writeln('          </td>');
+document.writeln('          <td width=20 bgcolor=#808080 align=center style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzNextM()" title="往后翻　月">');
+document.writeln('            <b>&gt;&gt;</b>');
+document.writeln('          </td>');
+document.writeln('          <td width=20 bgcolor=#808080 align=center style="font-size:12px;cursor: hand;color: #FFD700" onclick="dgmeizzNextY()" title="往后翻　年">');
+document.writeln('            <b>&gt;|</b>');
+document.writeln('          </td>');
+document.writeln('        </tr>');
+document.writeln('      </table>');
+document.writeln('    </td>');
+document.writeln('  </tr>');
+document.writeln('</table>');
+function window.onload(){
+dgsetday(dialogArguments);
+}
+-->
+</script>
+</head>
+<body>
+</body>
+</html>
+
