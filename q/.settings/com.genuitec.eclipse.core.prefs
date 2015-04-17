@@ -1,0 +1,4 @@
+#Fri Apr 17 16:41:47 CST 2015
+eclipse.preferences.version=1
+validator.Checked=WebContent/jquery/jquery-1.8.2.min.js,WebContent/js/jquery-1.8.2.min.js,WebContent/js/jquery.colorbox-min.js,WebContent/js/jquery-1.8.2.js,WebContent/jquery/jquery-1.11.1.min.js
+validator.Unchecked=
