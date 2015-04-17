@@ -1,0 +1,72 @@
+@CHARSET "utf-8";
+#search_center{
+	margin-left: auto;
+	margin-right: auto;
+	overflow:hidden;
+	width: 100%;
+	height: auto;
+	text-align:center;
+}
+.input_text {
+	border: 1px solid #3BC9B1;
+	height: 35px;
+	width: 380px;
+	font-size:2em;
+	color: #666666;
+}
+.input_subm {
+	border: 1px solid #3BC9B1;
+	background-color: #3BC9B1;
+	height: 40px;
+	width: 75px;
+	margin-left:-5px;
+	font-size:20px;
+	color: #fff;
+	cursor:pointer;
+	vertical-align: top;/*在一些浏览器中，显示内容不平衡，加这属性可实现水平平衡*/
+}
+.input_text_login {
+	border: 1px solid #3BC9B1;
+	height: 30px;
+	width: 270px;
+	margin-left:10px;
+	overflow:hidden;
+	color: #666666;
+	font-size: 1.2em;
+}
+table{
+	width:100%;
+	border:0;
+	cellspacing:0;
+	cellpadding:0;
+}
+td{
+	padding-right:50px;
+	valign:middle;
+	height:28px;
+}
+td a{
+	text-decoration: none;
+    color:#ffffff;
+}
+.table1{
+	width:auto;
+	border:0;
+	cellspacing:0;
+	cellpadding:0;
+	
+}
+.imgtop{
+	margin-top: -13px;
+	margin-right:-13px;
+}
+#login_content{ 
+    width: 400px; 
+	overflow: hidden;
+	margin-left: 23%;
+	margin-right: 23%;
+	margin-top: 0px;
+	font-size: 15px;
+	font-weight:bold;
+	color: #3BC9B1;
+}

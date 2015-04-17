@@ -1,0 +1,60 @@
+@CHARSET "utf-8";
+BODY {
+    overflow-y:auto;
+	MARGIN-TOP: 0px;
+	SCROLLBAR-FACE-COLOR:#B6D5E8;
+	MARGIN-BOTTOM: 0px;
+	SCROLLBAR-HIGHLIGHT-COLOR: #EDF2F6;
+	MARGIN-LEFT: 1px;
+	SCROLLBAR-SHADOW-COLOR: #C5D9E8;
+	COLOR: #333333;
+	SCROLLBAR-3DLIGHT-COLOR: #C5D9E8;
+	SCROLLBAR-ARROW-COLOR: #C0C2C7;
+	SCROLLBAR-TRACK-COLOR: #EDF2F6;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	SCROLLBAR-DARKSHADOW-COLOR: #EDF2F6;
+	FONT-SIZE: 9pt;
+	MARGIN: 0px;
+	FONT-FAMILY: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	background-color: #FFFFFF;
+}
+img{
+	border: 0px;
+}
+//a标签，无下划线，颜色。鼠标点击或放在a标签上面时样式，活动时样式变化
+a:link {
+	text-decoration: none;
+    color:#066EAC;
+}
+a:visited {
+	text-decoration: none;
+	color: #066EAC;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+	color: #EE5407;
+}
+input{
+	border: 1px solid #3BC9B1;
+	outline: none;
+}
+li{
+	list-style: none;
+	display: inline;
+}
+/*根据紧急程度更改字体颜色*/
+/*特急*/
+.td1{
+	color: #f70d23;
+}
+/*急*/
+.td2{
+	color: #206bf4;
+}
+/*普通*/
+.td3{
+	color: #3BC9B1;
+}
