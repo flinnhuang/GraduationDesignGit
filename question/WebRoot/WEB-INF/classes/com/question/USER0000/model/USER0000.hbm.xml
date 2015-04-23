@@ -7,8 +7,9 @@
 		<id name="YHSY">
 			<generator class="native" />
 		</id>
-		<property name="ZHMC" />
-		<property name="ZHMM" />
+		<property name="YHMC" />
+		<property name="YHMM" />
 		<property name="YHQX" />
+		<property name="YHLX" />
 	</class>
 </hibernate-mapping>

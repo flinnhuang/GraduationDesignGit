@@ -28,10 +28,10 @@ public class USER0000DaoImpl implements USER0000Dao{
 		Session session = null;
 		try{
 			session=sessionFactory.openSession();
-			String queryString="from USER0000 where ZHMC=? and ZHMM=?";
+			String queryString="from USER0000 where YHMC=? and YHMM=?";
 			Query queryObject=session.createQuery(queryString);
-			queryObject.setParameter(0, user0000.getZHMC());
-			queryObject.setParameter(1, user0000.getZHMM());
+			queryObject.setParameter(0, user0000.getYHMC());
+			queryObject.setParameter(1, user0000.getYHMM());
 			System.out.println("登录验证方法daoimpl--");
 			List list=queryObject.list();
 			if(list.size()==0){
@@ -55,7 +55,7 @@ public class USER0000DaoImpl implements USER0000Dao{
 		try{
 			session=sessionFactory.openSession();
 			transaction = session.beginTransaction();
-			String queryString="from USER0000 where ZHMC=? and ZHMM=?";
+			String queryString="from USER0000 where YHMC=? and YHMM=?";
 			Query queryObject=session.createQuery(queryString);
 			queryObject.setParameter(0, username);
 			queryObject.setParameter(1, oldpwd);
@@ -63,7 +63,7 @@ public class USER0000DaoImpl implements USER0000Dao{
 			System.out.println("daoimpl方法-修改密码-第一步数据库查询其信息-");
 			if(list.size()==1){
 				USER0000 us=list.get(0);
-				us.setZHMM(newpwd);
+				us.setYHMM(newpwd);
 				session.update(us);//在缓存中保存数据，受影响行数
 				transaction.commit();//写入数据库表
 				System.out.println("---修改的数据--"+newpwd+"-查询完毕!");
@@ -86,7 +86,7 @@ public class USER0000DaoImpl implements USER0000Dao{
 		Session session = null;
 		try{
 			session=sessionFactory.openSession();
-			String queryString="from USER0000 where ZHMC=?";
+			String queryString="from USER0000 where YHMC=?";
 			Query queryObject=session.createQuery(queryString);
 			queryObject.setParameter(0, username);
 			list = queryObject.list();
