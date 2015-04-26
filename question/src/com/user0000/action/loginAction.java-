@@ -1,4 +1,4 @@
-package com.question.USER0000.action;
+package com.USER0000.action;
 
 import java.util.Map;
 
@@ -6,13 +6,13 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.USER0000.dao.impl.USER0000DaoImpl;
+import com.USER0000.model.USER0000;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.question.USER0000.dao.impl.USER0000DaoImpl;
-import com.question.USER0000.model.USER0000;
 
-public class LoginAction extends ActionSupport{
-	public LoginAction(){
+public class loginAction extends ActionSupport{
+	public loginAction(){
 		
 	}
 	private USER0000 us;
@@ -20,7 +20,7 @@ public class LoginAction extends ActionSupport{
 	public String execute() throws Exception{
 		System.out.println("login--execute-"+us.getYHMC()+"---"+us.getYHMM());	
 	    Map sesseion = ActionContext.getContext().getSession();
-		sesseion.put("YHmc", us.getYHMC());
+		sesseion.put("YHMC", us.getYHMC());
 		return SUCCESS;	
 	}
 	public void validate(){

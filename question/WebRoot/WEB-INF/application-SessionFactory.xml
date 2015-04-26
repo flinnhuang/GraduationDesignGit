@@ -33,11 +33,12 @@
 		</property>
 		<property name="mappingResources">
 			<list>
-				<value>com/question/USER0000/model/USER0000.hbm.xml</value>
+			
+				<value>com/user0000/model/USER0000.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
-	<bean id="USER0000Daoimpl" class="com.question.USER0000.dao.impl.USER0000DaoImpl" abstract="false"
+	<bean id="USER0000Daoimpl" class="com.user0000.dao.impl.USER0000DaoImpl" abstract="false"
 		lazy-init="default" autowire="default" dependency-check="default">
 		<!-- 设置注入sessionFactory -->
 		<property name="sessionFactory" >

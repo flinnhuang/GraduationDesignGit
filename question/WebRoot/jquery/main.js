@@ -3,12 +3,12 @@ $(function(){
 	$('#tabs').tabs('add',{
 		id: "TIP1",
         title: "系统信息",
-        content: '<iframe id="if_TIP1" frameborder="false" class="tab_iframe" src="e.jsp"></iframe>',  
+        content: '<iframe id="if_TIP1" frameborder="false" class="tab_iframe" src="sysinfo.jsp"></iframe>',  
         closable: false,
 		tools:[{
 			iconCls: 'icon-mini-refresh',
 			handler:function(){
-				$('#if_TIP1').attr('src', 'e.jsp');
+				$('#if_TIP1').attr('src', 'sysinfo.jsp');
 			}
 		}]
     });
@@ -31,7 +31,7 @@ $(function(){
 	$('#btnLogout').click(function(){
 		$.messager.confirm('系统信息', '您真的要退出系统吗?', function(r){
 		   if (r){
-				window.location.href="index.jsp";
+				window.location.href="index.html";
 		   }
 		});
 	});

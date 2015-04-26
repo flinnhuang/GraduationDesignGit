@@ -1,8 +1,8 @@
-package com.question.USER0000.dao;
+package com.user0000.dao;
 
 import java.util.List;
 
-import com.question.USER0000.model.USER0000;
+import com.user0000.model.USER0000;
 
 public interface USER0000Dao {
 	//登陆验证

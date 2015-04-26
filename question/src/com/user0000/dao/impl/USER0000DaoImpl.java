@@ -1,4 +1,4 @@
-package com.question.USER0000.dao.impl;
+package com.user0000.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.question.USER0000.dao.USER0000Dao;
-import com.question.USER0000.model.USER0000;
+import com.user0000.dao.USER0000Dao;
+import com.user0000.model.USER0000;
 
 public class USER0000DaoImpl implements USER0000Dao{
 	private SessionFactory sessionFactory;

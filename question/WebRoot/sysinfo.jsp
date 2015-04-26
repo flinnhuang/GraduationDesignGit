@@ -10,14 +10,12 @@
 	request.setCharacterEncoding("GBK");
     String dis=request.getParameter("dis");
     if(dis==null)dis="";
-String u=(String)session.getAttribute("mail");
-if(u==null){
-	out.println("<br/><center><img alt='loginError' src='images/loginError.PNG'/></center>"+
-	"<br/><center>会话时间已过期！</center>");
-	return;
-}
-int l = (u.indexOf("@")<=0)?u.length():u.indexOf("@");
-String umail = u.substring(0, l);
+String u=(String)session.getAttribute("YHMC");
+// if(u==null){
+// 	out.println("<br/><center><img alt='loginError' src='images/loginError.PNG'/></center>"+
+// 	"<br/><center>会话时间已过期！</center>");
+// 	return;
+// }
 %>
 </head>
 <body>

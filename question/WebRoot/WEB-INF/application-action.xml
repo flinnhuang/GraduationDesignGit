@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<!--顾客登录-->
-	<bean id="loginAction" class="com.question.USER0000.action.LoginAction" abstract="false"
+	<bean id="LoginAction" class="com.user0000.action.LoginAction" abstract="false"
 		lazy-init="default" autowire="default" dependency-check="default">
 		<!-- 设置注入方法 -->
 		<property name="udi">

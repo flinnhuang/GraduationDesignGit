@@ -1,4 +1,4 @@
-package com.question.USER0000.model;
+package com.user0000.model;
 
 public class USER0000 {
 	private int YHSY;//用户索引，数据库自增长user index,id

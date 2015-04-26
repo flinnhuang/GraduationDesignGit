@@ -9,8 +9,8 @@
 	<package name="default" extends="struts-default">
 	    
 		<!-- Customer 顾客登录 -->
-		<action name="loginAction" class="loginAction">	
-			<result name="success" type="redirect">main.html</result>
+		<action name="loginAction" class="LoginAction">	
+			<result name="success" type="redirect">main.jsp</result>
 			<result name="input" type="redirect">index.html </result>
 		</action>
 		

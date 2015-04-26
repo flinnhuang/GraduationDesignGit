@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.question.USER0000.model.USER0000" table="USER0000" >
+	<class name="com.user0000.model.USER0000" table="USER0000" >
 		<id name="YHSY">
 			<generator class="native" />
 		</id>

@@ -1,10 +1,15 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*,java.security.MessageDigest,java.math.BigInteger,javax.servlet.http.Cookie,java.text.SimpleDateFormat"%>
 <html>
+  <% 
+	request.setCharacterEncoding("GBK");
+    String dis=request.getParameter("dis");
+    if(dis==null)dis="";
+	String u=(String)session.getAttribute("YHMC");
+	%>
   <head>
   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="异常处理中心,主页面">
-    <meta name="description" content="异常处理中心主页面，各功能显示主页面">
-    <title>问题异常处理中心>>当前帐号：测试账号*</title>
+    <title>问题异常处理中心>>当前帐号：<%=u %></title>
 	
 	<link rel="stylesheet" href="css/commons.css" type="text/css"></link>
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -16,9 +21,9 @@
     <script type="text/javascript" src="jquery/main.js"></script>
     
   </head>
-  
+
   <body>
-	<form id="menuForm" action="main.jsp" name="frm" method="post" >
+	<form id="menuForm" action="#" name="frm" method="post" >
 		<div id="main_layout" class="easyui-layout" style="width:100%;height:100%;">  
 			<div data-options="region:'north',title:''" style="padding:0px;height:75px; overflow:hidden;">
 <!--  -->
