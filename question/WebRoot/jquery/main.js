@@ -13,19 +13,19 @@ $(function(){
 		}]
     });
 	$('#m1').click(function(){
-		doAddTab("TIP2", "qm.jsp", "异常反馈");
+		doAddTab("TIP2", "abnormal_feedback.jsp", "异常反馈");
 	});
 	
     $('#m2').click(function(){
-		doAddTab("TIP3", "b.jsp", "异常处理");
+		doAddTab("TIP3", "abnormal_handling.jsp", "异常处理");
 	});
     
     $('#m3').click(function(){
-		doAddTab("TIP4", "c.jsp", "统计查询");
+		doAddTab("TIP4", "statistical_query.jsp", "统计查询");
 	});
     
     $('#m4').click(function(){
-		doAddTab("TIP5", "allCount.jsp", "全部异常");
+		doAddTab("TIP5", "all_abnormal.jsp", "全部异常");
 	});
 	
 	$('#btnLogout').click(function(){
