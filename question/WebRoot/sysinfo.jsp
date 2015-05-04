@@ -23,11 +23,11 @@ String u=(String)session.getAttribute("YHMC");
 	<input type="hidden" name="dis" value="<%=dis%>"/>
 	<div class="show" style="margin-top:100px;">
 	<h1>您共反馈问题
-	<a href="b.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
+	<a href="abnormal_feedback.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
 	xx</a>个，
-	<a href="b.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
+	<a href="abnormal_feedback.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
 	xx</a>个已得到处理，
-	<a href="b.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
+	<a href="abnormal_feedback.jsp"  onClick="document.getElementById('b').style.display='none';document.getElementById('c').style.display='none';auto();">
 	xx</a>个尚未处理</h1>
 
 	</div>
