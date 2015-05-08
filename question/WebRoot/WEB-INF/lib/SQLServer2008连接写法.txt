@@ -1,2 +1,0 @@
-jdbcDriver="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-jdbcUrl="jdbc:sqlserver://localhost:1433;databaseName=Êı¾İ¿âÃû;"
