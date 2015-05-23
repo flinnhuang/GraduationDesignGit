@@ -1,4 +1,4 @@
-#Sun Apr 26 21:09:00 CST 2015
+#Wed May 20 16:22:33 CST 2015
 eclipse.preferences.version=1
-validator.Checked=WebRoot/easyui132/jquery-1.8.0.min.js,WebRoot/jquery/jquery-1.8.2.js
+validator.Checked=WebRoot/b/kindeditor-min.js,WebRoot/b/plugins/preview/preview.js,WebRoot/b/kindeditor-all-min.js,WebRoot/easyui132/jquery-1.8.0.min.js,WebRoot/b/kindeditor.js,WebRoot/b/plugins/code/prettify.js,WebRoot/b/kindeditor-all.js,WebRoot/jquery/jquery-1.8.2.js
 validator.Unchecked=

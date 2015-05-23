@@ -8,12 +8,50 @@
 	<include file="struts-default.xml"/>
 	<package name="default" extends="struts-default">
 	    
-		<!-- Customer 顾客登录 -->
-		<action name="loginAction" class="LoginAction">	
+		<!-- 登录 -->
+		<action name="login" class="loginAction">	
 			<result name="success" type="redirect">main.jsp</result>
 			<result name="input" type="redirect">index.html </result>
 		</action>
-		
-
+		<!-- 添加问题 -->
+		<action name="addQuestion" class="questionAction" method="addQuestion">	
+			<result name="success" type="redirect">successPage.jsp</result>
+			<result name="input" type="redirect">inputPage.jsp </result>
+		</action>
+		<!-- 添加并提交问题 -->
+		<action name="addAndsubmitQuestion" class="questionAction" method="addandsubmitquestion">	
+			<result name="success" type="redirect">successPage.jsp</result>
+			<result name="input" type="redirect">inputPage.jsp </result>
+		</action>
+		<!-- only提交问题 -->
+		<action name="onlySubmitquestion" class="questionAction" method="onlysubmitquestion">	
+			<result name="success" type="redirect">b/subpage/successPage2.jsp</result>
+			<result name="input" type="redirect">b/subpage/inputPage2.jsp </result>
+		</action>
+		<!-- 追问问题 -->
+		<action name="zhuijiaQuestion" class="questionAction" method="zhuijiaquestion">	
+			<result name="success" type="redirect">successPage.jsp</result>
+			<result name="input" type="redirect">inputPage.jsp </result>
+		</action>
+		<!-- 回复问题 -->
+		<action name="replyQuestion" class="replyAction" method="replyQuestion">	
+			<result name="success" type="redirect">b/subpage/successPage.jsp</result>
+			<result name="input" type="redirect">b/subpage/inputPage.jsp </result>
+		</action>
+		<!-- 撤销问题 -->
+		<action name="rollbackreply" class="replyAction" method="rollbackreply">	
+			<result name="success" type="redirect">successPage.jsp</result>
+			<result name="input" type="redirect">inputPage.jsp </result>
+		</action>
+		<!-- 系统管理， 添加数据 -->
+		<action name="adddateAction" class="adddeletedateAction" method="adddate">
+			<result name="success" type="redirect">b/subpage/successPage3.jsp</result>
+			<result name="input" type="redirect">b/subpage/inputPage2.jsp </result>
+		</action>
+		<!-- 系统管理， 删除数据 -->
+		<action name="deletedateAction" class="adddeletedateAction" method="deletedate">
+			<result name="success" type="redirect">b/subpage/successPage3.jsp</result>
+			<result name="input" type="redirect">b/subpage/inputPage2.jsp </result>
+		</action>
 	</package>
 </struts>

@@ -391,7 +391,7 @@ public class mainDAOImpl {
 				ResultSet rs = null;
 				try{
 					con = DbConnection.getConnection();
-					//根据邮箱取出所有的系统平台
+					//根据系统取出所有的邮箱
 						String sql1 = "select S_USERID from Q_SYSUSER where S_SYSTEM = '"+sys+"'";
 						sta = con.prepareStatement(sql1);
 						rs = sta.executeQuery();

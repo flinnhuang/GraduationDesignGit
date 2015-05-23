@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.user.model.USER0000" table="USER0000" >
+		<id name="YHSY">
+			<generator class="native" />
+		</id>
+		<property name="YHMC" />
+		<property name="YHMM" />
+		<property name="YHQX" />
+		<property name="YHLX" />
+	</class>
+</hibernate-mapping>

@@ -25,7 +25,7 @@ $(function(){
 	});
     
     $('#m4').click(function(){
-		doAddTab("TIP5", "all_abnormal.jsp", "全部异常");
+		doAddTab("TIP5", "management.jsp", "系统管理");
 	});
 	
 	$('#btnLogout').click(function(){
@@ -67,4 +67,71 @@ $(function(){
 	       $('#tabs').tabs('select',index);
 	    }
 	}
+	//下一页
+	var $next = $(".next");
+	$next.click(function(){
+		var $noncepage = $("#noncepage");
+		var numpage = $noncepage.attr("value")-0+1;
+		$noncepage.attr("value",numpage);
+		$frm.submit();
+	});
+	//上一页
+	var $prev = $(".prev");
+	$prev.click(function(){
+		var $noncepage = $("#noncepage");
+		var numpage = $noncepage.attr("value")-0-1;
+		$noncepage.attr("value",numpage);
+		$frm.submit();
+	});
+	//刷新、跳页
+	var $subm = $(".subm");
+	$subm.click(function(){
+		var str = $(":radio:checked").val();
+		if(str == null||str == ""){
+			str="TITLE";
+		}
+		$("#radiochecked").attr("value",str);
+		$frm.submit();
+	});
+	//当前页
+	var $current = $(".current");
+	$current.click(function(){
+		var $noncepage = $("#noncepage");
+		var numpage = $(this).attr("value");
+		$noncepage.attr("value",numpage);
+		$frm.submit();
+		$(this).css({
+			"border":10+"px"
+		});
+	});
+	//首页
+	var $first = $(".first");
+	$first.click(function(){
+		var $noncepage = $("#noncepage");
+		var numpage = 1;
+		$noncepage.attr("value",numpage);	
+		$frm.submit();
+	});
+	//尾页
+	var $last = $(".last");
+	$last.click(function(){
+		var $allpages = $("#allpages");
+		var $noncepage = $("#noncepage");
+		var numpage = $allpages.attr("value")-0;
+		alert(numpage);
+		$noncepage.attr("value",numpage);
+		$frm.submit();
+	});
+	//搜索
+	var $search = $(".search");
+	$search.click(function(){
+		var str = $(":radio:checked").val();
+		if(str == null||str == ""){
+			str="TITLE";
+		}
+		$("#radiochecked").attr("value",str);
+		var $noncepage = $("#noncepage");
+		$noncepage.attr("value","1");
+		$frm.submit();	
+	});
 });

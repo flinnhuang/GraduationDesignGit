@@ -29,20 +29,98 @@
 				<prop key="hibernate.show_sql">true</prop>
 				<prop key="hibernate.format_sql">true</prop>
 				<prop key="hibernate.use_sql_comments">true</prop>
+				<prop key="hibernate.jdbc.use_scrollable_resultset">false</prop>
 			</props>
 		</property>
 		<property name="mappingResources">
 			<list>
-			
-				<value>com/user0000/model/USER0000.hbm.xml</value>
+				<value>com/user/model/USER0000.hbm.xml</value>
+				<value>com/model/QANDRTIME.hbm.xml</value>
+				<value>com/model/QUESTION.hbm.xml</value>
+				<value>com/model/REPLY000.hbm.xml</value>
+				<value>com/model/SYSTEMS0.hbm.xml</value>
+				<value>com/model/SYSUSER0.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
-	<bean id="USER0000Daoimpl" class="com.user0000.dao.impl.USER0000DaoImpl" abstract="false"
+	<bean id="UserDaoimpl" class="com.user.dao.impl.USER0000DaoImpl" abstract="false"
 		lazy-init="default" autowire="default" dependency-check="default">
 		<!-- 设置注入sessionFactory -->
 		<property name="sessionFactory" >
 			<ref local="sessionFactory"/>
 		</property>
 	</bean>
+	<bean id="sysInfoDaoImpl" class="com.sysinfo.dao.impl.sysinfoDaoImpl" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="MainDaoimpl" class="com.main.daoimpl.MainDaoimpl" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="initMethod" class="com.main.daoimpl.initMethod" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	<bean id="zsgcQuestionDaoImpl" class="com.question.dao.impl.zsgcQuestionDaoImpl" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+		<property name="initmethod">
+			<ref bean="initMethod"/>
+		</property>
+		<property name="zsgcrdi">
+			<ref bean="zsgcReplyDaoImpl"/>
+		</property>
+	</bean>
+	<bean id="zsgcReplyDaoImpl" class="com.reply.dao.impl.zsgcReplyDaoImpl" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+		<property name="initmethod">
+			<ref bean="initMethod"/>
+		</property>
+		<property name="zsgcqdi">
+			<ref bean="zsgcQuestionDaoImpl"/>
+		</property>
+		<property name="mdi">
+			<ref bean="MainDaoimpl"/>
+		</property>
+	</bean>
+	<bean id="functionmethod" class="com.question.dao.impl.functionmethod" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+		<property name="zsgcqdi">
+			<ref bean="zsgcQuestionDaoImpl"/>
+		</property>
+		<property name="initmethod">
+			<ref bean="initMethod"/>
+		</property>
+	</bean>
+	<bean id="statistical" class="com.sysinfo.dao.impl.statistical" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+		<property name="zsgcrdi">
+			<ref bean="zsgcReplyDaoImpl"/>
+		</property>
+	</bean>
+	<bean id="management" class="com.main.daoimpl.management" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<property name="sessionFactory" >
+			<ref local="sessionFactory"/>
+		</property>
+	</bean>
+	
 </beans>

@@ -21,7 +21,7 @@ public class sentemail2 {
 	/**  * send mail  */  
 	public static void sendMail()  {  
 		String host = "prism.coresolutions.com";//邮件服务器  
-		String from = "flinn.huang@cbxsoftware.com";//发件人地址 
+		String from = "flinn.huang@coresolutions.com";//发件人地址 
 		String to = "872081258@qq.com";//接受地址（必须支持pop3协议）  
 		String userName = "flinn.huang";//发件人邮件名称  
 		String pwd = "ASZXhun87";//发件人邮件密码 

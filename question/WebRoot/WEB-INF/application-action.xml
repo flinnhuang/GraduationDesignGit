@@ -3,14 +3,51 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	<!--顾客登录-->
-	<bean id="LoginAction" class="com.user0000.action.LoginAction" abstract="false"
+	<!--登录-->
+	<bean id="loginAction" class="com.user.action.LoginAction" abstract="false"
 		lazy-init="default" autowire="default" dependency-check="default">
 		<!-- 设置注入方法 -->
 		<property name="udi">
-			<ref bean="USER0000Daoimpl"/>
+			<ref bean="UserDaoimpl"/>
 		</property>
 	</bean>
-	
-	
+	<!--对异常问题的增删改查处理-->
+	<bean id="questionAction" class="com.question.action.QuestionAction" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<!-- 设置注入方法 -->
+		<property name="zsgcqdi">
+			<ref bean="zsgcQuestionDaoImpl"/>
+		</property>
+		<property name="mdi">
+			<ref bean="MainDaoimpl"/>
+		</property>
+		<property name="initmethod">
+			<ref bean="initMethod"/>
+		</property>
+	</bean>
+	<!--回复问题的增删改查处理-->
+	<bean id="replyAction" class="com.reply.action.ReplyAction" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<!-- 设置注入方法 -->
+		<property name="zsgcrdi">
+			<ref bean="zsgcReplyDaoImpl"/>
+		</property>
+		<property name="mdi">
+			<ref bean="MainDaoimpl"/>
+		</property>
+		<property name="zsgcqdi">
+			<ref bean="zsgcQuestionDaoImpl"/>
+		</property>
+		<property name="initmethod">
+			<ref bean="initMethod"/>
+		</property>
+	</bean>
+	<!--系统管理增删方法-->
+	<bean id="adddeletedateAction" class="com.main.daoimpl.action.managementAction" abstract="false"
+		lazy-init="default" autowire="default" dependency-check="default">
+		<!-- 设置注入方法 -->
+		<property name="mg">
+			<ref bean="management"/>
+		</property>
+	</bean>
 </beans>

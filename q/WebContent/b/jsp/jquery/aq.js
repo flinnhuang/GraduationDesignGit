@@ -41,16 +41,18 @@ $(function(){
 	
 	
 	/**********************************************************************/
+	function onlysave(){
+		
+	}
 	$("#onlysave").click(function(){//只保存不提交
 		//if(confirm("确认保存?")== true){
-			var $titl = $("#titl");
+		
+		var $titl = $("#titl");
 			//$titl.parent().find(".msg").remove();
 			var titl = $.trim($titl.attr("value"));
 			$titl.attr("value",titl);
-			if(titl == ""||titl == null){
-				//var msg = "<span class='msg'><img src='../../images/red-.png' width='13'" +
-				//		" height='14'/>请输入主题！</span>";
-				//$titl.parent().append(msg);
+			if(titl.equel("")||titl == null){
+				alert("主题不能为空！");
 				$titl.focus();
 				$titl.attr("value","");
 			}else{

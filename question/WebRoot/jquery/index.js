@@ -167,16 +167,3 @@ var usr = document.getElementById('usid').value;
 var expdate = new Date(); 
 SetCookie(usr, null, expdate); 
 } 
-
-function searchCheck() 
-{
-var sc = document.getElementById('search').value; 
-if(sc == ""){
-	alert("亲，请输入要搜索的问题哦！");
-	return;
-	
-}else{
-	document.getElementById('form2').submit();
-}
- 
-} 
